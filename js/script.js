@@ -7,20 +7,11 @@ FSJS project 2 - List Filter and Pagination
 
 
 /* 
-  Shown below are global variables, to be used throughout this program, but the following functions. 
+  Shown below are global variables, to be used throughout this program.
 */
 
-const elementsPerPage = 10;
-let currentPage = 1;
-const studentContainer = document.getElementById("student-container");
-const students = studentContainer.getElementsByTagName("li");
-
-// here is a loop to create a new student list
-
-var studentElements = [];
-for (i = 0; i < students.length; i += 1) {
-	studentElements.push(students[i]);
-}
+const studentList = document.getElementById('student-container');
+const students = document.getElementsByClassName('student-item cf');
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
