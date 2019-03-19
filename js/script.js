@@ -10,10 +10,10 @@ FSJS project 2 - List Filter and Pagination
   Shown below are global variables, to be used throughout this program.
 */
 
-const studentList = document.getElementById('student-container');
-const students = document.getElementsByTagName('li');
+const studentList = document.getElementsByTagName('li');
+const elementsPerPage = 10;
 
-/**
+/*
    Create the `showPage` function to hide all of the items in the 
    list except for the ten you want to show.
 
@@ -28,10 +28,16 @@ const students = document.getElementsByTagName('li');
        "invoke" the function 
 */
 
-function showPage() {
-	while (studentList.hasChildNodes()) {
+/*
+while (studentList.hasChildNodes()) {
       studentList.removeChild(studentList.firstChild);
    }
+*/
+
+function showPage() {
+	for(let i = 0; i < studentList.length; i += 1) {
+		studentList[i].style.display = 'none';
+	}
 }
 showPage();
 
