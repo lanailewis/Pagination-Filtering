@@ -11,9 +11,9 @@ FSJS project 2 - List Filter and Pagination
 */
 
 const studentList = document.getElementById('student-container');
-const students = document.getElementsByClassName('student-item cf');
+const students = document.getElementsByTagName('li');
 
-/*** 
+/**
    Create the `showPage` function to hide all of the items in the 
    list except for the ten you want to show.
 
@@ -26,15 +26,20 @@ const students = document.getElementsByClassName('student-item cf');
        or a placeholder to represent the actual function `argument` 
        that will be passed into the parens later when you call or 
        "invoke" the function 
-***/
+*/
+
+function showPage() {
+	while (studentList.hasChildNodes()) {
+      studentList.removeChild(studentList.firstChild);
+   }
+}
+showPage();
 
 
-
-
-/*** 
+/* 
    Create the `appendPageLinks function` to generate, append, and add 
    functionality to the pagination buttons.
-***/
+*/
 
 
 
