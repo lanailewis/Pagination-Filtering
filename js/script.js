@@ -46,7 +46,7 @@ pageDiv.appendChild(div);
 /*
 3. Add a ul to the “pagination” div to store the pagination links
 */
-div.appendChild(ul);
+const pageLinks = div.appendChild(ul);
 
 /*
 4. for every page, add li and a tags with the page number text
