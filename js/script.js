@@ -36,18 +36,18 @@ showPage();
 
 const appendPageLinks = ( list ) => {
 
-const itemsPerPage = Math.floor(list.length / 10) + 1;
+const itemsPerPage = Math.floor(studentList.length / 10) + 1;
 
-const div = document.createElement('div');
-div.className = 'pagination';
+const newDiv = document.createElement('div');
+newDiv.className = 'pagination';
 const pageDiv = document.getElementsByClassName('page');
-pageDiv.appendChild(div);
+pageDiv.appendChild(newDiv);
 
 /*
 3. Add a ul to the “pagination” div to store the pagination links
 */
 const newUL = document.createElement('ul');
-div.appendChild(newUl);
+newDiv.appendChild(newUl);
 
 /*
 4. for every page, add li and a tags with the page number text
@@ -63,7 +63,7 @@ call the showPage function to display the appropriate page
 clicked link using event.target
 */
 }
-
+appendPageLinks();
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
