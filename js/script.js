@@ -31,7 +31,7 @@ function showPage(list, page) {
 		}
 	}
 }
-showPage();
+showPage(studentList, currentPage);
 
 
 const appendPageLinks = ( list ) => {
@@ -52,6 +52,8 @@ newDiv.appendChild(newUl);
 /*
 4. for every page, add li and a tags with the page number text
 */
+const li = document.createElement('li');
+const a = document.createElement('a');
 
 
 
@@ -64,6 +66,3 @@ clicked link using event.target
 */
 }
 appendPageLinks();
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
