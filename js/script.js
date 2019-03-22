@@ -21,13 +21,12 @@ function hideList() {
 	}
 }
 
-function showPage(currentPage) {
+function showPage(list, page) {
 	hideList();
 	for(let i = 0; i < studentList.length; i++) {
 		let min = currentPage * 10 - 10;
 		let max = currentPage * 10 - 1;
-		if(i > min && i < max) {
-			// change display of selected students back to visible
+		if(i >= min && i <= max) {
 			studentList[i].style.display = 'block';
 		}
 	}
@@ -35,12 +34,33 @@ function showPage(currentPage) {
 showPage();
 
 
-/* 
-   Create the `appendPageLinks function` to generate, append, and add 
-   functionality to the pagination buttons.
+const appendPageLinks = ( list ) => {
+
+const itemsPerPage = Math.floor(list.length / 10) + 1;
+
+const div = document.createElement('div');
+div.className = 'pagination';
+const pageDiv = document.getElementsByClassName('page');
+pageDiv.appendChild(div);
+
+/*
+3. Add a ul to the “pagination” div to store the pagination links
+*/
+div.appendChild(ul);
+
+/*
+4. for every page, add li and a tags with the page number text
 */
 
 
+/*
+5. Add an event listener to each a tag. When they are clicked
+call the showPage function to display the appropriate page
+6. Loop over pagination links to remove active class from all links
+7. Add the active class to the link that was just clicked. You can identify that
+clicked link using event.target
+*/
+}
 
 
 
