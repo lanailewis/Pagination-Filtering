@@ -10,9 +10,10 @@ FSJS project 2 - List Filter and Pagination
 // Shown below are global variables, to be used throughout this program.
 
 const studentList = document.getElementsByTagName('li');
-let currentPage = 1;
 let studentsPerPage = 10;
 let numberOfPages = 1;
+let currentPage = 1;
+
 
 
 // this is a function that hides all the students in the list
@@ -54,21 +55,22 @@ const appendPageLinks = (list) => {
 
 	// the code below adds 'li' and 'a' tags with the page number text
 
-	const li = document.createElement('li');
-	const a = document.createElement('a');
+	
 	for(let i = 0; i < pageCount; i++) {
+		const li = document.createElement('li');
+		const a = document.createElement('a');
 		li.textContent = currentPage;
 		newUl.appendChild(li);
 		newUl.appendChild(a);
+		li.addEventListener("click", (e) => {
+			
+		});
 	}
 
 /*
 5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page
-*/
-		li.addEventListener("click", (e) => {
-			
-		});
+*/	
 }
 /*
 6. Loop over pagination links to remove active class from all links
