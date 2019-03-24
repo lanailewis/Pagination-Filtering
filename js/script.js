@@ -61,13 +61,7 @@ const appendPageLinks = (list) => {
 		newUl.appendChild(li);
 		newUl.appendChild(a);
 	}
-/*
-var pageCount = Math.ceil(studentElements.length / studentsPerPage);
-	for (var i = 0; i < pageCount; i++) {
-		let link = createLink(i + 1);
-		pageUl.appendChild(link);
-	}
-*/
+
 /*
 5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page
