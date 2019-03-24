@@ -11,7 +11,7 @@ FSJS project 2 - List Filter and Pagination
 
 const studentList = document.getElementsByTagName('li');
 let currentPage = 1;
-let numberPerPage = 10;
+let studentsPerPage = 10;
 let numberOfPages = 1;
 
 
@@ -41,6 +41,7 @@ showPage(studentList, currentPage);
 
 const appendPageLinks = (list) => {
 	const itemsPerPage = Math.floor(studentList.length / 10) + 1;
+	let pageCount = Math.ceil(studentList.length / studentsPerPage);
 	const newDiv = document.createElement('div');
 	newDiv.className = 'pagination';
 	const pageDiv = document.querySelector('.page');
@@ -51,15 +52,22 @@ const appendPageLinks = (list) => {
 	const newUl = document.createElement('ul');
 	newDiv.appendChild(newUl);
 
-	// the code below adds li and a tags with the page number text
+	// the code below adds 'li' and 'a' tags with the page number text
 
 	const li = document.createElement('li');
 	const a = document.createElement('a');
-	if(currentPage = i) {
+	for(let i = 0; i < pageCount; i++) {
 		li.textContent = currentPage;
 		newUl.appendChild(li);
 		newUl.appendChild(a);
 	}
+/*
+var pageCount = Math.ceil(studentElements.length / studentsPerPage);
+	for (var i = 0; i < pageCount; i++) {
+		let link = createLink(i + 1);
+		pageUl.appendChild(link);
+	}
+*/
 /*
 5. Add an event listener to each a tag. When they are clicked
 call the showPage function to display the appropriate page
