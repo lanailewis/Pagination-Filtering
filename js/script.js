@@ -39,7 +39,6 @@ function showPage(list, page) {
 showPage(studentList, currentPage);
 
 // this function adds the pagination links to the page
-
 const appendPageLinks = (list) => {
 	const itemsPerPage = Math.floor(studentList.length / 10) + 1;
 	let pageCount = Math.ceil(studentList.length / studentsPerPage);
@@ -54,27 +53,25 @@ const appendPageLinks = (list) => {
 	newDiv.appendChild(newUl);
 
 	// the code below adds 'li' and 'a' tags with the page number text
-
-	
 	for(let i = 0; i < pageCount; i++) {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
-		li.textContent = currentPage;
+		li.textContent = pageCount;
 		newUl.appendChild(li);
 		newUl.appendChild(a);
+		/*
+		5. Add an event listener to each a tag. When they are clicked, call the showPage function to display the appropriate page
+		*/	
 		li.addEventListener("click", (e) => {
 			
 		});
-	}
+		/*
+	6. Loop over pagination links to remove active class from all links
+	7. Add the active class to the link that was just clicked. You can identify that
+	clicked link using event.target
+	*/
 
-/*
-5. Add an event listener to each a tag. When they are clicked
-call the showPage function to display the appropriate page
-*/	
+	} 
 }
-/*
-6. Loop over pagination links to remove active class from all links
-7. Add the active class to the link that was just clicked. You can identify that
-clicked link using event.target
-*/
+
 appendPageLinks();
