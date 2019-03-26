@@ -56,7 +56,8 @@ const appendPageLinks = (list) => {
 	for(let i = 0; i < pageCount; i++) {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
-		li.textContent = pageCount;
+		/* the text content of each list item should be a page number, starting with 1, and increasing by 1 until the maximum number of 6 is reached, which is the number of pages that displays all 54 student records in groups of 10 */
+		li.textContent = i + 1;
 		newUl.appendChild(li);
 		newUl.appendChild(a);
 		/*
