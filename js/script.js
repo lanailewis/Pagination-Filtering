@@ -36,9 +36,9 @@ function showPage(list, page) {
 		}
 	}
 }
-// showPage(studentList, currentPage);
+showPage(studentList, currentPage);
 
-// this function adds the pagination links to the page
+// the function below adds the pagination links to the page
 
 const appendPageLinks = (list) => {
 	const itemsPerPage = Math.floor(studentList.length / 10) + 1;
@@ -58,28 +58,13 @@ const appendPageLinks = (list) => {
 	for(let i = 0; i < pageCount; i++) {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
-		
-		/* the text content of each list item should be a page number, starting with 1, and increasing by 1 until the maximum number of 6 is reached, which is the number of pages that displays all 54 student records in groups of 10 */
-		
 		a.textContent = i + 1;
 		newUl.appendChild(li);
 		li.appendChild(a);
-		
-		/*
-		5. Add an event listener to each a tag. When they are clicked, call the showPage function to display the appropriate page
-		*/	
-		
 		a.addEventListener("click", (e) => {
 			showPage(studentList, currentPage);
-			
-		// 6. Loop over pagination links to remove active class from all links
-		
-			for(i = 0; i < newUl.length; i++) {
+			for(i = 0; i < a.length; i++) {
 				a.className = none;
-				
-				/* 7. Add the active class to the link that was just clicked. You can identify that
-				clicked link using event.target */
-				
 				e.target.className = 'active';
 			}
 		});
