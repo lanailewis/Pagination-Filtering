@@ -9,7 +9,7 @@ FSJS project 2 - List Filter and Pagination
  
 // Shown below are global variables, to be used throughout this program.
 
-const studentList = document.getElementsByTagName('li');
+const studentList = document.getElementsByClassName('student-list');
 let studentsPerPage = 10;
 let numberOfPages = 1;
 let currentPage = 1;
@@ -62,13 +62,14 @@ const appendPageLinks = (list) => {
 		newUl.appendChild(li);
 		li.appendChild(a);
 		a.addEventListener("click", (e) => {
-			showPage(studentList, currentPage);
+			showPage();
 			for(i = 0; i < a.length; i++) {
-				a.className = none;
-				e.target.className = 'active';
-			}
+				a.classlist.remove('active');
+				if (e.target) {
+					a.className = 'active';   
+			   } 
+			} 
 		});
-	} 
-}
-
+	}
+};
 appendPageLinks(studentList);
