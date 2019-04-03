@@ -66,10 +66,13 @@ const appendPageLinks = (list) => {
 			for(i = 0; i < a.length; i++) {
 				a.classlist.remove('active');
 				if (e.target) {
-					a.classList.add('active');   
+					a.classList.add('active');  
+					console.log(i);
+					console.log(a.length);
 				}
+				console.log(i);
+				console.log(a.length);
 			} 
-			 
 		});
 	}
 };
