@@ -50,7 +50,7 @@ const appendPageLinks = (list) => {
 	const pagerUl = document.createElement('ul');
 	newDiv.appendChild(pagerUl);
 
-	// the code below adds 'li' and 'a' tags with the page number text
+	// the code below adds 'li' and 'a' tags with the page number text to the bottom of the page
 	
 	for(let i = 0; i < pageCount; i++) {
 		const li = document.createElement('li');
