@@ -68,7 +68,7 @@ const appendPageLinks = (list) => {
 			for(i = 0; i < links.length; i++) {
 				a.classlist.remove('active');
 			} 
-			e.target.className = 'active';
+			e.target.style = 'active';
 			console.log(e.target);
 		});
 	}
