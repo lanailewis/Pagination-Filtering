@@ -58,20 +58,19 @@ const appendPageLinks = (list) => {
 	for(let i = 0; i < pageCount; i++) {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
+		a.href = '#';
 		a.textContent = i + 1;
 		pagerUl.appendChild(li);
 		li.appendChild(a);
 		a.addEventListener("click", (e) => {
 			showPage(studentList, i + 1);
+			console.log(i);
+			console.log(a.length);
 			for(i = 0; i < a.length; i++) {
 				a.classlist.remove('active');
 				if (e.target) {
 					a.classList.add('active');  
-					console.log(i);
-					console.log(a.length);
 				}
-				console.log(i);
-				console.log(a.length);
 			} 
 		});
 	}
