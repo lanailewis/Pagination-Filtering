@@ -65,12 +65,11 @@ const appendPageLinks = (list) => {
 		li.appendChild(a);
 		a.addEventListener("click", (e) => {
 			showPage(studentList, i + 1);
-			console.log(i);
-			console.log(e.target);
 			for(i = 0; i < links.length; i++) {
 				a.classlist.remove('active');
 			} 
 			e.target.className = 'active';
+			console.log(e.target);
 		});
 	}
 };
