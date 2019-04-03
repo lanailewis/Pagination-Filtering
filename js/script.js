@@ -50,8 +50,10 @@ const appendPageLinks = (list) => {
 	const pagerUl = document.createElement('ul');
 	newDiv.appendChild(pagerUl);
 
-	// the code below adds 'li' and 'a' tags with the page number text to the bottom of the page
-	
+	/* 
+	the code below adds 'li' and 'a' tags with the page number text to the bottom of the page, removes the 	'active' class from all links, then adds it back in when a link is clicked
+	the code below also filters the student list to display 10 at a time
+	*/
 	for(let i = 0; i < pageCount; i++) {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
