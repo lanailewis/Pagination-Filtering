@@ -70,9 +70,9 @@ const appendPageLinks = (list) => {
 			console.log(links);
 			console.log(e.target);
 			for(i = 0; i < links.length; i++) {
-				links.classlist.remove('active');
+				a.classlist.remove('active');
 				if (e.target) {
-					links.classList.add('active');  
+					a.classList.add('active');  
 				}
 			} 
 		});
