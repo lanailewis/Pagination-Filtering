@@ -33,7 +33,7 @@ function showPage(list, page) {
 		}
 	}
 }
-showPage(studentList, currentPage);
+showPage(list, page);
 
 // the function below adds the pagination links to the page
 
@@ -59,13 +59,14 @@ const appendPageLinks = (list) => {
 		pagerUl.appendChild(li);
 		li.appendChild(a);
 		a.addEventListener("click", (e) => {
-			showPage();
+			showPage(list, page);
 			for(i = 0; i < a.length; i++) {
 				a.classlist.remove('active');
+				if (e.target) {
+					a.className = 'active';   
+				}
 			} 
-			if (e.target) {
-				a.className = 'active';   
-			} 
+			 
 		});
 	}
 };
