@@ -29,7 +29,7 @@ function showPage(list, page) {
 		let min = currentPage * 10 - 10;
 		let max = currentPage * 10 - 1;
 		if(i >= min && i <= max) {
-			studentList[i].style.display = '';
+			studentList[i].style.display = 'block';
 		}
 	}
 }
@@ -62,9 +62,9 @@ const appendPageLinks = (list) => {
 			showPage();
 			for(i = 0; i < a.length; i++) {
 				a.classlist.remove('active');
-				if (e.target) {
-					a.className = 'active';   
-			   } 
+			} 
+			if (e.target) {
+				a.className = 'active';   
 			} 
 		});
 	}
