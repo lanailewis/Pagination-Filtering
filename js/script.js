@@ -26,14 +26,14 @@ function hideList() {
 function showPage(list, page) {
 	hideList();
 	for(let i = 0; i < studentList.length; i++) {
-		let min = currentPage * 10 - 10;
-		let max = currentPage * 10 - 1;
+		let min = page * 10 - 10;
+		let max = page * 10 - 1;
 		if(i >= min && i <= max) {
 			studentList[i].style.display = 'block';
 		}
 	}
 }
-showPage(list, page);
+showPage(studentList, currentPage);
 
 // the function below adds the pagination links to the page
 
@@ -59,7 +59,7 @@ const appendPageLinks = (list) => {
 		pagerUl.appendChild(li);
 		li.appendChild(a);
 		a.addEventListener("click", (e) => {
-			showPage(list, page);
+			showPage(studentList, i + 1);
 			for(i = 0; i < a.length; i++) {
 				a.classlist.remove('active');
 				if (e.target) {
