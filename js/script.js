@@ -9,12 +9,9 @@ FSJS project 2 - List Filter and Pagination
  
 // Shown below are global variables, to be used throughout this program.
 
-const studentList = document.getElementsByClassName('student-list');
+const studentList = document.getElementsByClassName('student-item cf');
 let studentsPerPage = 10;
-let numberOfPages = 1;
 let currentPage = 1;
-
-
 
 // this is a function that hides all the students in the list
 
@@ -32,7 +29,7 @@ function showPage(list, page) {
 		let min = currentPage * 10 - 10;
 		let max = currentPage * 10 - 1;
 		if(i >= min && i <= max) {
-			studentList[i].style.display = 'block';
+			studentList[i].style.display = '';
 		}
 	}
 }
@@ -50,8 +47,8 @@ const appendPageLinks = (list) => {
 
 	// the code below adds a ul to the “pagination” div to store the pagination links
 
-	const newUl = document.createElement('ul');
-	newDiv.appendChild(newUl);
+	const pagerUl = document.createElement('ul');
+	newDiv.appendChild(pagerUl);
 
 	// the code below adds 'li' and 'a' tags with the page number text
 	
@@ -59,7 +56,7 @@ const appendPageLinks = (list) => {
 		const li = document.createElement('li');
 		const a = document.createElement('a');
 		a.textContent = i + 1;
-		newUl.appendChild(li);
+		pagerUl.appendChild(li);
 		li.appendChild(a);
 		a.addEventListener("click", (e) => {
 			showPage();
