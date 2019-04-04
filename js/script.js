@@ -64,6 +64,7 @@ const appendPageLinks = (list) => {
 		pagerUl.appendChild(li);
 		li.appendChild(a);
 		a.addEventListener("click", (e) => {
+			
 			showPage(studentList, i + 1);
 			for(i = 0; i < links.length; i++) {
 				links[i].classList.remove('active');
